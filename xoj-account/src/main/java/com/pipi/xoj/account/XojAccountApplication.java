@@ -12,5 +12,5 @@ public class XojAccountApplication {
     public static void main(String[] args) {
         SpringApplication.run(XojAccountApplication.class, args);
     }
-
 }
+
