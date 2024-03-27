@@ -9,13 +9,13 @@ import lombok.Data;
  * (User)表实体类
  *
  * @author guox
- * @since 2024-03-26 15:41:44
+ * @since 2024-03-27 09:36:50
  */
 @Data
 public class User extends Model<User> implements Serializable{
-
+    
     private static final long serialVersionUID = 1L;
-
+    
     //id
     private Integer id;
     //用户名
@@ -40,5 +40,7 @@ public class User extends Model<User> implements Serializable{
     private Integer role;
     //出生年月日
     private Date birthday;
+    //是否删除，0: 未删除，1: 已删除
+    private Integer isDelete;
 }
 
