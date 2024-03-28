@@ -7,8 +7,9 @@ spring:
       config:
         server-addr: ${spring.cloud.nacos.server-addr}
         file-extension: yaml
+        namespace: e0738353-acab-457b-b43c-393a58d2ba2b
         group: dev
-        namespace: e59086a9-17a4-49d1-9fbd-6c227e57e021
-
   application:
-    name: xoj-account
+    name: xoj-gateway
+server:
+  port: 88
