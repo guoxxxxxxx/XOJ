@@ -3,6 +3,9 @@ package com.pipi.xoj.account.entity;
 import java.util.Date;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.io.Serializable;
+
+import com.pipi.xoj.common.valid.custom.ListValue;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 /**
@@ -17,6 +20,7 @@ public class User extends Model<User> implements Serializable{
     private static final long serialVersionUID = 1L;
     
     //id
+    @NotBlank
     private Integer id;
     //用户名
     private String username;
@@ -41,6 +45,7 @@ public class User extends Model<User> implements Serializable{
     //出生年月日
     private Date birthday;
     //是否删除，0: 未删除，1: 已删除
+    @ListValue(vals={0, 1})
     private Integer isDelete;
 }
 

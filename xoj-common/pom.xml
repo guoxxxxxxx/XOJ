@@ -5,8 +5,20 @@
   <artifactId>xoj-common</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <parent>
+    <parent>
     <groupId>com.pipi.xoj</groupId>
     <artifactId>xoj</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -64,7 +76,12 @@
       <artifactId>mybatis-plus-extension</artifactId>
       <version>3.5.5</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>3.0.2</version>
+    </dependency>
   </dependencies>
 
   <dependencyManagement>
