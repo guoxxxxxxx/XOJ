@@ -8,4 +8,7 @@ spring:
         server-addr: ${spring.cloud.nacos.server-addr}
         file-extension: yaml
         group: dev
-        namespace: e59086a9-17a4-49d1-9fbd-6c227e57e021
+        namespace: 2d5b1f99-0265-40f5-a459-e3a4c5072bfb
+
+  application:
+    name: xoj-authority

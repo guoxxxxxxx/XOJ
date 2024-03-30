@@ -2,16 +2,12 @@ package com.pipi.xoj.account.controller;
 
 
 
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.pipi.xoj.account.entity.User;
 import com.pipi.xoj.account.service.UserService;
-import com.pipi.xoj.common.valid.group.AddGroup;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -46,7 +42,7 @@ public class UserController{
     }
 
     @RequestMapping("/update")
-    public String update(@Validated({AddGroup.class}) @RequestBody User user, BindingResult result){
+    public String update(@RequestBody User user, BindingResult result){
         if (result.hasErrors()){
             return "has error";
         }
