@@ -5,6 +5,13 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOriginPatterns: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
       routes:
         - id: xoj-account-route
           uri: lb://xoj-account

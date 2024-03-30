@@ -3,6 +3,8 @@ package com.pipi.xoj.account.entity;
 import java.util.Date;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.io.Serializable;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 /**
@@ -17,6 +19,7 @@ public class User extends Model<User> implements Serializable{
     private static final long serialVersionUID = 1L;
     
     //id
+    @NotBlank
     private Integer id;
     //用户名
     private String username;

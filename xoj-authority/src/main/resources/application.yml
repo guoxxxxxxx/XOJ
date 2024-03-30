@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: xoj-authority
+server:
+  port: 30000
