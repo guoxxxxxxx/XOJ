@@ -1,30 +1,25 @@
-package com.pipi.xoj.account.entity;
+/**
+ * @Time: 2024/3/31 14:58
+ * @Author: guoxun
+ * @File: UserVO
+ * @Description:
+ */
 
-import java.util.Date;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.io.Serializable;
+package com.pipi.xoj.account.vo;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-/**
- * (User)表实体类
- *
- * @author guox
- * @since 2024-03-27 09:36:50
- */
+import java.util.Date;
+
 @Data
-public class User extends Model<User> implements Serializable{
-    
-    private static final long serialVersionUID = 1L;
-    
+public class UserVO {
+
     //id
     @NotBlank
     private Integer id;
     //用户名
     private String username;
-    //密码
-    private String password;
     //昵称
     private String nickname;
     //邮箱
@@ -43,9 +38,4 @@ public class User extends Model<User> implements Serializable{
     private Integer role;
     //出生年月日
     private Date birthday;
-    //是否删除，0: 未删除，1: 已删除
-    private Integer isDelete;
-    // 加密盐值
-    private String salt;
 }
-

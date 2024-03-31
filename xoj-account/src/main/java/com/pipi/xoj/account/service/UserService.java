@@ -11,5 +11,25 @@ import com.pipi.xoj.account.entity.User;
  */
 public interface UserService extends IService<User> {
 
+    /**
+     * 通过邮箱查询用户信息
+     * @param email
+     * @return
+     */
+    User queryByEmail(String email);
+
+    /**
+     * 插入一个新用户
+     * @param user
+     * @return
+     */
+    int insertOne(User user);
+
+    /**
+     * 根据邮箱判断是否已经被注册
+     * @param email
+     * @return
+     */
+    boolean isRegisterByEmail(String email);
 }
 

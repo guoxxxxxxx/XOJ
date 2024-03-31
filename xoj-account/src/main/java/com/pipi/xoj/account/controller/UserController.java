@@ -1,13 +1,14 @@
 package com.pipi.xoj.account.controller;
 
-
-
+import com.pipi.xoj.account.dto.AuthCodeDTO;
 import com.pipi.xoj.account.entity.User;
+import com.pipi.xoj.account.exception.groups.RegisterGroup;
 import com.pipi.xoj.account.service.UserService;
+import com.pipi.xoj.account.vo.UserVO;
+import com.pipi.xoj.common.core.response.R;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,9 +17,8 @@ import org.springframework.web.bind.annotation.*;
  * @author guox
  * @since 2024-03-27 09:36:39
  */
-@RefreshScope   // 动态刷新nacos配置
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/account/user")
 public class UserController{
     /**
      * 服务对象
@@ -26,29 +26,17 @@ public class UserController{
     @Autowired
     private UserService userService;
 
-    @Value("${msg:default}")
-    private String msg;
-
-    @RequestMapping("/test")
-    public String testService(){
-        return msg + " t1";
-    }
-
-    @RequestMapping("/userInfo")
-    public User userInfo(){
-        User user = new User();
-        user.setUsername("name");
-        return user;
-    }
-
-    @RequestMapping("/update")
-    public String update(@RequestBody User user, BindingResult result){
-        if (result.hasErrors()){
-            return "has error";
-        }
-        else {
-            return "success";
-        }
+    /**
+     * 通过邮箱查询用户信息
+     * @param email
+     * @return
+     */
+    @RequestMapping("/queryByEmail")
+    public R<UserVO> queryByEmail(@RequestParam String email){
+        User user = userService.queryByEmail(email);
+        UserVO userVO = new UserVO();
+        BeanUtils.copyProperties(user, userVO);
+        return R.successResponse(userVO);
     }
 }
 

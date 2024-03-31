@@ -14,7 +14,6 @@
         <module>xoj-common</module>
         <module>xoj-account</module>
         <module>xoj-question</module>
-        <module>xoj-authority</module>
         <module>xoj-gateway</module>
     </modules>
 

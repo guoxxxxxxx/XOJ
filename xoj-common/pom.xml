@@ -7,7 +7,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>xoj-common-core</module>
-    <module>xoj-common-exception</module>
   </modules>
   <dependencies>
   </dependencies>
