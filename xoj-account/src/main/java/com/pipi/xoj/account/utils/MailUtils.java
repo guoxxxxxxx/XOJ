@@ -5,7 +5,7 @@
  * @Description:
  */
 
-package com.pipi.xoj.authority.utils;
+package com.pipi.xoj.account.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

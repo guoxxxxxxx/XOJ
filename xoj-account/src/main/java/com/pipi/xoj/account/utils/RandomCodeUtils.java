@@ -5,7 +5,7 @@
  * @Description:
  */
 
-package com.pipi.xoj.authority.utils;
+package com.pipi.xoj.account.utils;
 
 import java.util.Random;
 

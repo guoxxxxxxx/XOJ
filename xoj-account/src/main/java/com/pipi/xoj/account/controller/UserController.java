@@ -1,14 +1,14 @@
 package com.pipi.xoj.account.controller;
 
-
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.pipi.xoj.account.dto.AuthCodeDTO;
 import com.pipi.xoj.account.entity.User;
+import com.pipi.xoj.account.exception.groups.RegisterGroup;
 import com.pipi.xoj.account.service.UserService;
 import com.pipi.xoj.account.vo.UserVO;
 import com.pipi.xoj.common.core.response.R;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -37,13 +37,6 @@ public class UserController{
         UserVO userVO = new UserVO();
         BeanUtils.copyProperties(user, userVO);
         return R.successResponse(userVO);
-    }
-
-
-    @PostMapping("/insertOne")
-    public R<Integer> insertOne(@RequestBody User user){
-        int i = userService.insertOne(user);
-        return R.successResponse(i);
     }
 }
 

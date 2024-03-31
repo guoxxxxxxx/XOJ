@@ -24,5 +24,12 @@ public interface UserService extends IService<User> {
      * @return
      */
     int insertOne(User user);
+
+    /**
+     * 根据邮箱判断是否已经被注册
+     * @param email
+     * @return
+     */
+    boolean isRegisterByEmail(String email);
 }
 

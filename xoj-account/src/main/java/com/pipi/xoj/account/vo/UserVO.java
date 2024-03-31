@@ -8,9 +8,11 @@
 package com.pipi.xoj.account.vo;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
 import java.util.Date;
 
+@Data
 public class UserVO {
 
     //id

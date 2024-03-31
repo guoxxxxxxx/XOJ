@@ -45,5 +45,7 @@ public class User extends Model<User> implements Serializable{
     private Date birthday;
     //是否删除，0: 未删除，1: 已删除
     private Integer isDelete;
+    // 加密盐值
+    private String salt;
 }
 

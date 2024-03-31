@@ -30,5 +30,11 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     public int insertOne(User user) {
         return userDao.insert(user);
     }
+
+    @Override
+    public boolean isRegisterByEmail(String email) {
+        User user = userDao.selectOne(new QueryWrapper<User>().eq("email", email));
+        return user != null;
+    }
 }
 
