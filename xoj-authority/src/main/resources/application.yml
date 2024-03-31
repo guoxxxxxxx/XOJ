@@ -1,5 +1,9 @@
 spring:
   application:
     name: xoj-authority
+  data:
+    redis:
+      host: 192.168.247.132
+      port: 6379
 server:
   port: 30000

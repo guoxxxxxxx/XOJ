@@ -37,7 +37,7 @@ public class MailUtils {
      * @param randomCode 验证码
      * @param targetEmail 收件人邮箱地址
      */
-    public static void sendMessage(String randomCode, String targetEmail, String subject, String text, String time){
+    public static void sendMessage(String randomCode, String targetEmail, String subject, String text, int time){
 
         // 系统属性
         Properties properties = System.getProperties();

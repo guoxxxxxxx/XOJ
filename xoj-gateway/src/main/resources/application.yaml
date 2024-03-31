@@ -16,6 +16,13 @@ spring:
         - id: xoj-account-route
           uri: lb://xoj-account
           predicates:
-            - Path=/api/**
+            - Path=/api/account/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+
+        - id: xoj-authority-route
+          uri: lb://xoj-authority
+          predicates:
+            - Path=/api/auth/**
           filters:
             - RewritePath=/api/?(?<segment>.*), /$\{segment}

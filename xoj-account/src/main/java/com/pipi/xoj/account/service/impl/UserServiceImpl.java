@@ -1,9 +1,11 @@
 package com.pipi.xoj.account.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pipi.xoj.account.dao.UserDao;
 import com.pipi.xoj.account.entity.User;
 import com.pipi.xoj.account.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,5 +17,18 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
+    @Autowired
+    UserDao userDao;
+
+
+    @Override
+    public User queryByEmail(String email) {
+        return  userDao.selectOne(new QueryWrapper<User>().eq("email", email));
+    }
+
+    @Override
+    public int insertOne(User user) {
+        return userDao.insert(user);
+    }
 }
 
