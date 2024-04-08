@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.247.132:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        file-extension: yaml
+        group: dev
+        namespace: 632b2c6e-c33b-4ad9-92bf-330702892054
+
+  application:
+    name: xoj-sandbox

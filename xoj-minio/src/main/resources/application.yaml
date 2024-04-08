@@ -1,0 +1,11 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+  minio:
+    access-key: 7SneXBIWbNrguaXe0o5s
+    secret-key: Xu3iZ6sLA5m87szBe687VT7VK05BUiofektZnoFz
+    url: http://192.168.247.132:9000
+    bucket-name: xoj-bucket

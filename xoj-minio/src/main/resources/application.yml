@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: xoj-minio
+server:
+  port: 8001

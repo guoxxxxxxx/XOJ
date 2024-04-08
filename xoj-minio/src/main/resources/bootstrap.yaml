@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.247.132:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        file-extension: yaml
+        namespace: 64b89fb0-5cf2-4a04-bae0-a633eb592414
+        group: dev
+  application:
+    name: xoj-minio

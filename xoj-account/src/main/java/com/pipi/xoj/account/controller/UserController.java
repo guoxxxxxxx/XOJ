@@ -31,7 +31,7 @@ public class UserController{
      * @param email
      * @return
      */
-    @RequestMapping("/queryByEmail")
+    @GetMapping("/queryByEmail")
     public R<UserVO> queryByEmail(@RequestParam String email){
         User user = userService.queryByEmail(email);
         UserVO userVO = new UserVO();
