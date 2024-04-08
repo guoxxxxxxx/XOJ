@@ -1,0 +1,5 @@
+sandbox:
+  host: 192.168.247.132
+  port: 5050
+  connectTimeout: 5
+  readTimeout: 5
