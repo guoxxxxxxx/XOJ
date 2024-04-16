@@ -1,7 +1,12 @@
 package com.pipi.xoj.question.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.io.Serializable;
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -16,6 +21,7 @@ public class Question extends Model<Question> implements Serializable{
     private static final long serialVersionUID = 1L;
     
     //主键id
+    @TableId(type = IdType.AUTO)
     private Integer id;
     //题目标题
     private String title;
@@ -23,7 +29,7 @@ public class Question extends Model<Question> implements Serializable{
     private String description;
     //当前题目所支持的语言,采用如下形式进行存储 "0,1,2"
     private String languageTypeList;
-    //题目难度等级，分1-10档，1最简单，10最难
+    //题目难度等级，分1-3档，1为简单，2为中等，3为困难
     private Integer level;
     //示例, 采用JSON格式进行存储
     private String example;
@@ -41,5 +47,13 @@ public class Question extends Model<Question> implements Serializable{
     private String valCase;
     //是否删除，0: 未删除，1: 已删除
     private Integer isDelete;
+    // 对应的标签的id
+    @TableField(exist = false)
+    private Integer[] tagList;
+    // 对应的标签的具体值
+    @TableField(exist = false)
+    private List<String> tagNameList;
+    @TableField(exist = false)
+    private List<QuestionTemplate> templateList;
 }
 

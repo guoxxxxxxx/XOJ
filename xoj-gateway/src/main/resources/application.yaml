@@ -19,9 +19,17 @@ spring:
             - Path=/api/account/**
           filters:
             - RewritePath=/api/?(?<segment>.*), /$\{segment}
+
         - id: xoj-minio-route
           uri: lb://xoj-minio
           predicates:
             - Path=/api/minio/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+
+        - id: xoj-question-route
+          uri: lb://xoj-question
+          predicates:
+            - Path=/api/question/**
           filters:
             - RewritePath=/api/?(?<segment>.*), /$\{segment}

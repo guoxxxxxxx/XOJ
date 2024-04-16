@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.247.132:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        file-extension: yaml
+        namespace: 90b874f3-02d7-4201-a51d-8e93c2bfca42
+        group: dev
+  application:
+    name: xoj-question

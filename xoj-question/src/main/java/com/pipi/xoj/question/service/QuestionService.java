@@ -11,5 +11,19 @@ import com.pipi.xoj.question.entity.Question;
  */
 public interface QuestionService extends IService<Question> {
 
+    /**
+     * 插入一个对象
+     * @param question
+     * @return
+     */
+    int insertOne(Question question);
+
+    /**
+     * 通过id查询题目详细信息
+     * @param id
+     * @return
+     */
+    Question queryById(Integer id);
+
 }
 
